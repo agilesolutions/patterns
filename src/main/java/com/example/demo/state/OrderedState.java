@@ -1,5 +1,7 @@
 package com.example.demo.state;
 
+import com.example.demo.model.Package;
+
 public class OrderedState implements PackageState {
 
     @Override
