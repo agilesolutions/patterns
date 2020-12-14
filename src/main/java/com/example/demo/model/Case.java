@@ -26,7 +26,7 @@ public class Case {
         return this;
     }
 
-    public void compute() {
+    public void apply() {
         strategies.stream().forEach(s -> s.accept(this));
     }
 }
