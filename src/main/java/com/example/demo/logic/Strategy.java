@@ -9,7 +9,7 @@ import java.util.function.Consumer;
 
 public interface Strategy {
 
-    default Case apply(Consumer<Case> logic) {
+    default Case andThen(Consumer<Case> logic) {
         logic.accept((Case)this);
         return (Case)this;
 

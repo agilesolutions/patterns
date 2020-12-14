@@ -15,7 +15,7 @@ public class CreateCase {
     private void test() {
         Case myCase = new Case();
 
-        myCase.apply(rejected()).apply(kycReview()).apply(priReview()).apply(verify(true));
+        myCase.andThen(rejected()).andThen(kycReview()).andThen(priReview()).andThen(verify(true));
 
         System.out.println(myCase);
     }
