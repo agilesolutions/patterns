@@ -7,7 +7,13 @@ import com.example.demo.model.CaseStatus;
 import java.time.Instant;
 import java.util.function.Consumer;
 
-public class CaseStrategy {
+public interface Strategy {
+
+    default Case apply(Consumer<Case> logic) {
+        logic.accept((Case)this);
+        return (Case)this;
+
+    }
 
     public static Consumer<Case> kycReview() {
         return c -> c.setPhase(CasePhase.KYC_REVIEW.name());
@@ -28,5 +34,4 @@ public class CaseStrategy {
             }
         };
     }
-
 }

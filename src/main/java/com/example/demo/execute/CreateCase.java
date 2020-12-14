@@ -2,7 +2,7 @@ package com.example.demo.execute;
 
 import com.example.demo.model.Case;
 
-import static com.example.demo.logic.CaseStrategy.*;
+import static com.example.demo.logic.Strategy.*;
 
 public class CreateCase {
 
@@ -15,7 +15,7 @@ public class CreateCase {
     private void test() {
         Case myCase = new Case();
 
-        myCase.append(rejected()).append(kycReview()).append(priReview()).append(verify(true)).apply();
+        myCase.apply(rejected()).apply(kycReview()).apply(priReview()).apply(verify(true));
 
         System.out.println(myCase);
     }
